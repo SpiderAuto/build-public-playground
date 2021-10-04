@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI-build-playground
 
 # Controls when the workflow will run
 on:
@@ -43,7 +43,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: 637555894446.dkr.ecr.eu-central-1.amazonaws.com/spider-ai/build-public-playground
+          tags: ${{ secrets.CONTAINERS_REGISTRY }}/build-public-playground:${{ github.run_number }}
 
 #       # Runs a single command using the runners shell
 #       - name: Run a one-line script
